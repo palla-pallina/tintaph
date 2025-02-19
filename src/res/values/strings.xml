@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">tintaPH</string>
+    <string name="alrmem"><font color='white'>Already a member?  </font><font color='#FF516B'><b>Log In</b></font></string>
+    <string name="name_content">Title</string>
+    <string name="desc_content">Describe your work!</string>
+    <string name="tag_content">#addtags</string>
+    <string name="user_ph"><b>mikamika</b></string>
+    <string name="user_desc">uni student doing art on the side!</string>
+</resources>

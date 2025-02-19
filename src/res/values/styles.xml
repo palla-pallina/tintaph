@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="RoundedButton" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">45dp</item> <!-- Makes the button circular -->
+    </style>
+</resources>

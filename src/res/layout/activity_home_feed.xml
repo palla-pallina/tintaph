@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <!-- Drawer Layout -->
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <!-- Main Content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Top Navigation Bar -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/topNavBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="@color/black"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="9dp">
+
+                    <!-- Logo -->
+                    <ImageView
+                        android:id="@+id/logoImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/text_logo" />
+
+                    <!-- App Title -->
+                    <TextView
+                        android:id="@+id/appTitle"
+                        android:layout_width="184dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center" />
+
+                    <!-- User Profile Icon -->
+                    <ImageView
+                        android:id="@+id/navUser"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:paddingEnd="5dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="User Icon"
+                        android:src="@drawable/usericonn" />
+
+                    <!-- Navigation Button -->
+                    <ImageButton
+                        android:id="@+id/navButton"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="Menu Button"
+                        android:src="@drawable/ham" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Tab Layout -->
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                app:tabIndicatorColor="@color/white"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@color/white"
+                app:tabTextColor="@color/white">
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tab1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Home" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tab2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Following" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tab3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recent" />
+            </com.google.android.material.tabs.TabLayout>
+
+            <!-- RecyclerView for Scrollable Image Grid -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="702dp"
+                android:layout_margin="0dp"
+                android:layout_marginTop="100dp" />
+
+        </LinearLayout>
+
+        <!-- Navigation Drawer -->
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigationView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            app:menu="@menu/drawer_menu"
+            app:headerLayout="@layout/nav_header"
+            android:background="@color/black"
+            app:itemTextColor="@color/white"
+            app:itemIconTint="@color/white"
+            app:itemTextAppearance="@font/cabin_regular"
+            />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+    <!-- Upload Button -->
+    <ImageView
+        android:id="@+id/uploadButton"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/uploadbtn"
+        android:elevation="10dp"/>
+
+    <!-- Floating TabLayout -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tabContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/drawer_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+    </androidx.cardview.widget.CardView>
+
+    <!-- Bottom Navigation Container with Rounded Corners -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottomNavContainer"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginHorizontal="16dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="5dp"
+        app:cardBackgroundColor="@color/black"
+        app:itemIconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/black"
+            app:itemIconSize="24dp"
+            app:itemIconTint="@color/white"
+            app:menu="@menu/bottom_navv_menu"
+            />
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
